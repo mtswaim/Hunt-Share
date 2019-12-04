@@ -9,8 +9,8 @@ function EditLand(props) {
         <p>Photo Link:</p>
         <input
           type="text"
-          name="photo"
-          value={props.landForm.photo}
+          name="image"
+          value={props.landForm.image_url}
           onChange={props.handleFormChange} />
         <p>State that Contains Property</p>
         <input

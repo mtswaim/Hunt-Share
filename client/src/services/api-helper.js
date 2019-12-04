@@ -31,21 +31,21 @@ export const verifyUser = async () => {
 }
 
 export const createLand = async (data) => {
-  const resp = await api.post('/teachers', { teacher: data })
+  const resp = await api.post('/lands', { land: data })
   return resp.data
 }
 
 export const readAllLand = async () => {
-  const resp = await api.get('/teachers')
+  const resp = await api.get('/lands')
   return resp.data
 }
 
 export const updateLand = async (id, data) => {
-  const resp = await api.put(`/teachers/${id}`, { teacher: data })
+  const resp = await api.put(`/lands/${id}`, { land: data })
   return resp.data
 }
 
 export const destroyLand = async (id) => {
-  const resp = await api.delete(`/teachers/${id}`)
+  const resp = await api.delete(`/lands/${id}`)
   return resp.data
 }

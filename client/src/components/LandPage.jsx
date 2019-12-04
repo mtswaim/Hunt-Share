@@ -11,7 +11,7 @@ class LandPage extends Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.props.mountEditForm(this.props.id);
   }
 
@@ -21,7 +21,7 @@ class LandPage extends Component {
       <div className="land-page">
         {land === undefined ? <h2>Loading . . .</h2> : (
           <div>
-            <img alt={land.state} src={land.photo} />
+            <img alt={land.state} src={land.image_url} />
             {this.state.isEdit ?
               <Route path={'/lands/:id/edit'} render={() => (
                 <EditLand

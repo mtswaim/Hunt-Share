@@ -26,7 +26,7 @@ class App extends Component {
       landForm: {
         state: "",
         county: "",
-        photo: ""
+        image_url: ""
       },
       currentUser: null,
       authFormData: {
@@ -60,7 +60,7 @@ class App extends Component {
       landForm: {
         state: "",
         county: "",
-        photo: ""
+        image_url: ""
       }
     }))
   }
@@ -85,11 +85,11 @@ class App extends Component {
   }
 
   handleFormChange = (e) => {
-    const { state, value } = e.target;
+    const { name, value } = e.target;
     this.setState(prevState => ({
       landForm: {
         ...prevState.landForm,
-        [state]: value
+        [name]: value
       }
     }))
   }
@@ -183,7 +183,7 @@ class App extends Component {
               newLand={this.newLand} />
           )} />
         <Route
-          path="/land/:id"
+          path="/lands/:id"
           render={(props) => {
             const { id } = props.match.params;
             const land = this.state.land.find(el => el.id === parseInt(id));
