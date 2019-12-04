@@ -35,7 +35,7 @@ export const createLand = async (data) => {
   return resp.data
 }
 
-export const readAllLands = async () => {
+export const readAllLand = async () => {
   const resp = await api.get('/teachers')
   return resp.data
 }
