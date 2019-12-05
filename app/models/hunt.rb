@@ -1,4 +1,4 @@
 class Hunt < ApplicationRecord
   belongs_to :lands
-  belongs_to :users
+  belongs_to :user
 end

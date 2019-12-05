@@ -5,18 +5,28 @@ function LandView(props) {
   return (
     <div className="land-container">
       {props.land &&
-        props.land.map(land => (
-          <div
-            key={land.id}
-            className="land-card"
-            onClick={(e) => {
-              props.history.push(`/lands/${land.id}`);
-              window.scrollTo(0, 0);
-            }}>
-            <img src={land.image_url} alt={land.state} />
-            <h3>
-              <p>{land.state}</p>
-            </h3>
+        Array.from(new Set(props.land.map(land => land.state))).map(state => (
+          <div className="state-container">
+            <h3>{state}</h3>
+            {
+              props.land.map(land => (
+                <>
+                  {
+                    land.state === state ? (
+                      <div
+                        key={land.id}
+                        className="land-card"
+                        onClick={(e) => {
+                          props.history.push(`/lands/${land.id}`);
+                          window.scrollTo(0, 0);
+                        }}>
+                        <img src={land.image_url} />
+                      </div>
+                    ) : <> </>
+                  }
+                </>
+              ))
+            }
           </div>
         ))}
       <div
@@ -29,7 +39,7 @@ function LandView(props) {
           alt="Create a new land"
           src="https://image.flaticon.com/icons/png/512/14/14980.png"
           className="plus-sign" />
-        <h3>Add new land</h3>
+        <h3>Add A Property</h3>
       </div>
     </div>
   )

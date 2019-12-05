@@ -37,7 +37,11 @@ class LandsController < ApplicationController
 
   # DELETE /lands/1
   def destroy
-    @land.destroy
+    if @land.user == @current_user
+      @land.destroy
+    else
+      render json: { error: 'unauthorized' }, status: :unauthorized
+    end
   end
 
   private

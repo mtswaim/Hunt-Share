@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import logo from '../Images/logo.png'
 
 export default function Header(props) {
   return (
     <header>
+      <img id="hero-image" alt="" src={logo}></img>
       <h1><Link to='/' onClick={props.resetForm}>HuntShare</Link></h1>
       <div>
         {props.currentUser

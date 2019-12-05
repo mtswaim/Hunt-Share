@@ -5,6 +5,7 @@ import LandPage from './components/LandPage';
 import CreateLand from './components/CreateLand';
 import Login from './components/Login';
 import Register from './components/Register';
+import Footer from './components/Footer'
 import {
   createLand,
   readAllLand,
@@ -197,6 +198,7 @@ class App extends Component {
               deleteLand={this.deleteLand} />
           }}
         />
+        <Footer />
       </div>
     );
   }

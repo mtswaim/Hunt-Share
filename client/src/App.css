@@ -1,11 +1,14 @@
+/* #FF9211 */
+
 body {
   text-align: center;
-  background-color: whitesmoke;
+  background-color: #EEF9FE;
   height: 100vh;
 }
 
 h1 {
   margin: 0;
+  text-decoration: none;
 }
 
 header {
@@ -17,14 +20,21 @@ header {
   justify-content: space-between;
   height: 20px;
   display: inline-block;
-  margin-top: 10%;
+  margin-top: 8%;
+  margin-bottom: 20%;
 }
 
 header>h1>a {
   text-decoration: none;
   cursor: pointer;
+  color: black;
 }
-
+header>h1>a:hover {
+  color: #FF9211;
+  transition-delay: 200ms;
+  transition: 1s;
+  transition-timing-function: linear;
+} 
 header>div>button, p {
   margin: 0 3rem;
 }
@@ -59,6 +69,58 @@ img {
   cursor: pointer;
 }
 
-#land-page {
+.land-container {
+  max-width: 100%;
+}
+.state-container {
   display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  border-bottom: solid black 2px;
+  border-left: solid black 2px;
+  margin-left: 4%;
+  margin-bottom: 5%;
+}
+.state-container h3 {
+  margin: 0;
+  display: inline-block;
+  font-size: 2em;
+  margin-left: 1%;
+  align-self:flex-end;
+  width: 8%;
+}
+.state-container img {
+  padding: 0;
+  width: 20vw;
+  height: 22vh;
+  border-radius: 10px;
+  margin: 2em 2em 0 2em;
+}
+.state-container img:hover {
+  cursor: pointer;
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+  transition-timing-function: 1s;
+  transition-duration: 0.5s;
+}
+#hero-image {
+  padding: 0;
+  display: inline-block;
+  width: 40%;
+}
+footer {
+  background-image: linear-gradient(#EEF9FE, #ff9221);
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+}
+footer img {
+  align-self: flex-end;
+  widows: 30%;
+}
+footer h1 {
+  align-self: flex-end;
 }
