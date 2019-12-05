@@ -1,8 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-
+import Motto from './Motto'
 function LandView(props) {
   return (
+    <Motto />
     <div className="land-container">
       {props.land &&
         Array.from(new Set(props.land.map(land => land.state))).map(state => (

@@ -166,7 +166,6 @@ class App extends Component {
             handleRegister={this.handleRegister}
             handleChange={this.authHandleChange}
             formData={this.state.authFormData} />)} />
-        <Motto />
         <Route
           exact path="/"
           render={() => (
