@@ -21,6 +21,7 @@ class LandPage extends Component {
       <div className="land-page">
         {land === undefined ? <h2>Loading . . .</h2> : (
           <div>
+            <h1>{land.county} County {land.state}</h1>
             <img alt={land.state} src={land.image_url} />
             {this.state.isEdit ?
               <Route path={'/lands/:id/edit'} render={() => (
@@ -36,7 +37,6 @@ class LandPage extends Component {
               )} />
               :
               <>
-                <h1>{land.state}</h1>
                 <button onClick={() => {
                   this.setState({
                     isEdit: true

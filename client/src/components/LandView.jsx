@@ -30,16 +30,16 @@ function LandView(props) {
           </div>
         ))}
       <div
-        className="land-card"
+        className="add-card"
         onClick={() => {
           props.history.push('/new/land');
           window.scrollTo(0, 0);
         }}>
+        <h3>Add A Property</h3>
         <img
           alt="Create a new land"
           src="https://image.flaticon.com/icons/png/512/14/14980.png"
           className="plus-sign" />
-        <h3>Add A Property</h3>
       </div>
     </div>
   )

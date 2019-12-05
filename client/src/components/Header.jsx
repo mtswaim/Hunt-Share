@@ -12,10 +12,10 @@ export default function Header(props) {
           ?
           <>
             <p>{props.currentUser.username}</p>
-            <button onClick={props.handleLogout}>logout</button>
+            <a onClick={props.handleLogout}>logout</a>
           </>
           :
-          <button onClick={props.handleLoginButton}>Login/register</button>
+          <a onClick={props.handleLoginButton}>Login/register</a>
         }
       </div>
     </header>

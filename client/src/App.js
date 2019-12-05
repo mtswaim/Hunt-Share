@@ -3,6 +3,7 @@ import { Route, Link, withRouter } from 'react-router-dom';
 import LandView from './components/LandView';
 import LandPage from './components/LandPage';
 import CreateLand from './components/CreateLand';
+import Motto from './components/Motto'
 import Login from './components/Login';
 import Register from './components/Register';
 import Footer from './components/Footer'
@@ -165,6 +166,7 @@ class App extends Component {
             handleRegister={this.handleRegister}
             handleChange={this.authHandleChange}
             formData={this.state.authFormData} />)} />
+        <Motto />
         <Route
           exact path="/"
           render={() => (
