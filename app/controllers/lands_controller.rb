@@ -1,5 +1,6 @@
 class LandsController < ApplicationController
   before_action :set_land, only: [:show, :update, :destroy]
+  before_action :authorize_request, except: [:index, :show, :update]
 
   # GET /lands
   def index
@@ -15,11 +16,12 @@ class LandsController < ApplicationController
 
   # POST /lands
   def create
-    @land = Land.new(land_params)
-
+    # @land = Land.new(land_params)
+    @land = @current_user.lands.new(land_params)
     if @land.save
       render json: @land, status: :created, location: @land
     else
+      puts @land.errors.full_messages
       render json: @land.errors, status: :unprocessable_entity
     end
   end
@@ -46,6 +48,6 @@ class LandsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def land_params
-      params.require(:land).permit(:state, :county, :image_url, :latitude, :longitude)
+      params.require(:land).permit(:state, :county, :image_url, :latitude, :longitude, :user_id, :id, :created_at, :updated_at)
     end
 end

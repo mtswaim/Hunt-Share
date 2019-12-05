@@ -9,15 +9,15 @@ h1 {
 }
 
 header {
-  font-family: 'Permanent Marker', cursive;
-  text-align: left;
+  text-align: center;
   padding: 2rem;
-  background: linear-gradient(to right, #d6d6d6, #b1b1b1, #d6d6d6);
-  width: 100%;
+  width: 20%;
   top: 0;
   display: flex;
   justify-content: space-between;
   height: 20px;
+  display: inline-block;
+  margin-top: 10%;
 }
 
 header>h1>a {
@@ -28,7 +28,9 @@ header>h1>a {
 header>div>button, p {
   margin: 0 3rem;
 }
-
+header h1 {
+  border-bottom: solid black 2px;
+}
 .auth-container {
   margin: 8rem 36rem;
   background: #b1b1b1;
@@ -37,25 +39,6 @@ header>div>button, p {
 
 html {
   scroll-behavior: smooth;
-}
-
-.teacher-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-  grid-gap: 10px;
-  margin: 8rem 10rem;
-}
-
-.teacher-card {
-  background: #d6d6d6;
-  cursor: pointer;
-}
-
-.teacher-page {
-  margin: 8rem auto;
-  background: #d6d6d6;
-  width: 20rem;
-  padding: 0rem 0rem 2rem 0rem;
 }
 
 .create-form {
@@ -72,6 +55,10 @@ img {
 }
 
 .plus-sign {
-  max-width: 4rem;
+  max-width: 2rem;
   cursor: pointer;
+}
+
+#land-page {
+  display: flex;
 }

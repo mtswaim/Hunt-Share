@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import { withRouter } from 'react-router';
+import { Route, Link, withRouter } from 'react-router-dom';
 import LandView from './components/LandView';
 import LandPage from './components/LandPage';
 import CreateLand from './components/CreateLand';
@@ -121,6 +120,7 @@ class App extends Component {
   handleLogin = async () => {
     const currentUser = await loginUser(this.state.authFormData);
     this.setState({ currentUser });
+    this.props.history.push("/")
   }
 
   handleRegister = async (e) => {

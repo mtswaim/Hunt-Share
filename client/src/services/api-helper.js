@@ -31,6 +31,7 @@ export const verifyUser = async () => {
 }
 
 export const createLand = async (data) => {
+  console.log(data)
   const resp = await api.post('/lands', { land: data })
   return resp.data
 }
