@@ -5,7 +5,7 @@ import logo from '../Images/logo.png'
 export default function Header(props) {
   return (
     <header>
-      <img id="hero-image" alt="" src={logo}></img>
+      <Link to='/' onClick={props.resetForm}><img id="hero-image" alt="" src={logo}></img></Link>
       <h1><Link to='/' onClick={props.resetForm}>HuntShare</Link></h1>
       <div>
         {props.currentUser

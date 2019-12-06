@@ -1,0 +1,31 @@
+import React, { Component } from 'react'
+
+export default class CreateHunt extends Component {
+  state = {
+    review: '',
+    image_url: ''
+  }
+
+  handleChange = (e) => {
+    const { name, value } = e.target
+    this.setState({
+      [name]: value
+    })
+  }
+
+  render() {
+    return (
+      <div id='create-box'>
+        <form id='create-hunt' onSubmit={(e) => {
+          e.preventDefault()
+          this.props.createHunt(this.props.landId, this.state)
+          this.setState({ review: '' })
+        }}>
+          <textarea autoFocus placeholder='Write Review Here' id='review-area' name='review' value={this.state.review} onChange={this.handleChange}>
+          </textarea>
+          <button id='submit-review'>Submit Review</button>
+        </form>
+      </div >
+    )
+  }
+}

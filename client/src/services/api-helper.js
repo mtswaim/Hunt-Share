@@ -50,3 +50,23 @@ export const destroyLand = async (id) => {
   const resp = await api.delete(`/lands/${id}`)
   return resp.data
 }
+export const getHunts = async (landId) => {
+  const resp = await api.get(`/lands/${landId}/reviews`)
+  return resp.data
+}
+
+export const postHunt = async (landId, reviewData) => {
+  const resp = await api.post(`/lands/${landId}/reviews`, reviewData)
+  console.log(landId)
+  return resp.data
+}
+
+export const putHunt = async (reviewId, reviewData) => {
+  const resp = await api.put(`/lands/landId/review/${reviewId}`, reviewData)
+  return resp.data
+}
+
+export const deleteHunt = async (landId, reviewId) => {
+  const resp = await api.delete(`/lands/${landId}/reviews/${reviewId}`)
+  return resp.data
+}

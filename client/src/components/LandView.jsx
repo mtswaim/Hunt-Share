@@ -3,8 +3,8 @@ import { withRouter } from 'react-router';
 import Motto from './Motto'
 function LandView(props) {
   return (
-    <Motto />
     <div className="land-container">
+      <Motto />
       {props.land &&
         Array.from(new Set(props.land.map(land => land.state))).map(state => (
           <div className="state-container">

@@ -24,7 +24,7 @@ function EditLand(props) {
           name="county"
           value={props.landForm.county}
           onChange={props.handleFormChange} />
-        <button>Submit</button>
+        <a>Submit</a>
       </form>
     </div>
   )
