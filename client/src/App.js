@@ -190,12 +190,13 @@ class App extends Component {
             const { id } = props.match.params;
             const land = this.state.land.find(el => el.id === parseInt(id));
             return <LandPage
-              id={id}
+              landId={id}
               land={land}
               handleFormChange={this.handleFormChange}
               mountEditForm={this.mountEditForm}
               editLand={this.editLand}
               landForm={this.state.landForm}
+              currentUser={this.state.currentUser}
               deleteLand={this.deleteLand} />
           }}
         />

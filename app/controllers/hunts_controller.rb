@@ -18,7 +18,7 @@ class HuntsController < ApplicationController
     @hunt = Hunt.new(hunt_params)
 
     if @hunt.save
-      render json: @hunt, status: :created, location: @hunt
+      render json: @hunt, status: :created
     else
       render json: @hunt.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class HuntsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def hunt_params
-      params.require(:hunt).permit(:cost, :animal, :review)
+      params.require(:hunt).permit(:cost, :animal, :review, :user_id, :land_id, :image_url)
     end
 end

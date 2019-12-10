@@ -10,7 +10,8 @@ class LandPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isEdit: false
+      isEdit: false,
+      hunt: []
     }
   }
 
@@ -29,10 +30,10 @@ class LandPage extends Component {
 
 
 
-  createHunt = async (userId, landId, reviewData) => {
-    const newReview = await postHunt(userId, landId, reviewData)
+  createHunt = async (userId, landId, huntData) => {
+    const newHunt = await postHunt(userId, landId, huntData)
     this.setState(prevState => ({
-      reviews: [...prevState.reviews, newReview]
+      hunt: [...prevState.hunt, newHunt]
     }))
   }
 
@@ -44,17 +45,17 @@ class LandPage extends Component {
           <div>
             <h1>{land.county} County {land.state}</h1>
             <img alt={land.state} src={land.image_url} />
-            {/* <CreateHunt
-              currentUser={currentUser}
+            <CreateHunt
+              currentUser={this.props.currentUser}
               landId={this.props.landId}
               createHunt={this.createHunt}
             />
             <HuntList
-              reviews={reviews}
-              currentLand={currentLand}
-              currentUser={currentUser}
+              hunts={this.props.hunts}
+              currentLand={this.props.currentLand}
+              currentUser={this.props.currentUser}
               destroyHunt={this.destroyHunt}
-            /> */}
+            />
             {this.state.isEdit ?
               <Route path={'/lands/:id/edit'} render={() => (
                 <EditLand

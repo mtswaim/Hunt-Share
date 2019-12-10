@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const baseUrl = 'http://localhost:3000'
+// const baseUrl = 'https://huntshare-api.herokuapp.com/'
 
 const api = axios.create({
   baseURL: baseUrl
@@ -51,22 +52,23 @@ export const destroyLand = async (id) => {
   return resp.data
 }
 export const getHunts = async (landId) => {
-  const resp = await api.get(`/lands/${landId}/reviews`)
+  const resp = await api.get(`/lands/${landId}/hunts`)
   return resp.data
 }
 
-export const postHunt = async (landId, reviewData) => {
-  const resp = await api.post(`/lands/${landId}/reviews`, reviewData)
-  console.log(landId)
+export const postHunt = async (userId, landId, huntData) => {
+  huntData.user_id = userId
+  huntData.land_id = landId
+  const resp = await api.post(`/lands/${landId}/hunts`, huntData)
   return resp.data
 }
 
-export const putHunt = async (reviewId, reviewData) => {
-  const resp = await api.put(`/lands/landId/review/${reviewId}`, reviewData)
+export const putHunt = async (huntId, huntData) => {
+  const resp = await api.put(`/lands/landId/hunts/${huntId}`, huntData)
   return resp.data
 }
 
-export const deleteHunt = async (landId, reviewId) => {
-  const resp = await api.delete(`/lands/${landId}/reviews/${reviewId}`)
+export const deleteHunt = async (huntId) => {
+  const resp = await api.delete(`/lands/pineapple/hunts/${huntId}`)
   return resp.data
 }
