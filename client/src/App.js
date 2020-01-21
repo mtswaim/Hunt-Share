@@ -197,7 +197,8 @@ class App extends Component {
               editLand={this.editLand}
               landForm={this.state.landForm}
               currentUser={this.state.currentUser}
-              deleteLand={this.deleteLand} />
+              deleteLand={this.deleteLand}
+            />
           }}
         />
         <Footer />

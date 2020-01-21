@@ -50,12 +50,12 @@ class LandPage extends Component {
               landId={this.props.landId}
               createHunt={this.createHunt}
             />
-            <HuntList
+            {/* <HuntList
               hunts={this.props.hunts}
               currentLand={this.props.currentLand}
               currentUser={this.props.currentUser}
               destroyHunt={this.destroyHunt}
-            />
+            /> */}
             {this.state.isEdit ?
               <Route path={'/lands/:id/edit'} render={() => (
                 <EditLand
